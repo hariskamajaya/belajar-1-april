@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -59,6 +60,13 @@ Route::prefix('training')->group(function(){
     })->name('training.mtcna');
 
 });
+
+// pemanggilan controller.
+
+Route::get('barang', [BarangController::class, 'index']);
+Route::get('barang/create', [BarangController::class, 'create']);
+
+
 
 
 
