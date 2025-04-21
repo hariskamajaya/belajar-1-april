@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\RuanganController;
+use App\Http\Controllers\UmurController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -71,6 +72,15 @@ Route::get('barang/create', [BarangController::class, 'create'])->name('barang.c
 Route::resource('ruangan', RuanganController::class);
 
 Route::get('report', [RuanganController::class, 'report'])->name('ruangan.report');
+
+Route::prefix('umur')->group(function(){
+
+    //Route untuk form umur : 
+    Route::get('form-umur', [UmurController::class, 'form_umur'])->name('form');
+    Route::post('proses', [UmurController::class, 'proses'])->name('proses');
+    Route::get('berhasil', [UmurController::class, 'berhasil'])->name('berhasil');
+
+});
 
 
 
