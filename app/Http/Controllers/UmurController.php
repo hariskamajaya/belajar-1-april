@@ -9,7 +9,7 @@ class UmurController extends Controller
     //form umur
     public function form_umur()
     {
-        // 
+        return view('umur.form');
     }
 
     //proses
