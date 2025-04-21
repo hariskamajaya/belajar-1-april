@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\RuanganController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -63,8 +64,13 @@ Route::prefix('training')->group(function(){
 
 // pemanggilan controller.
 
-Route::get('barang', [BarangController::class, 'index']);
-Route::get('barang/create', [BarangController::class, 'create']);
+Route::get('barang', [BarangController::class, 'index'])->name('barang.index');
+Route::get('barang/create', [BarangController::class, 'create'])->name('barang.create');
+
+// route resource
+Route::resource('ruangan', RuanganController::class);
+
+Route::get('report', [RuanganController::class, 'report'])->name('ruangan.report');
 
 
 
