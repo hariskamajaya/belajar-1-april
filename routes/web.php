@@ -39,4 +39,27 @@ Route::get('profile', function(){
 })->name('halaman-profile');
 
 
+// Group dengan routing.
+//ini groupnya
+Route::prefix('training')->group(function(){
+
+    // item 1
+    Route::get('laravel', function(){
+        return 'Ini adalah kelas Laravel';
+    })->name('training.laravel');
+    
+    // item 2
+    Route::get('ccna', function(){
+        return 'Ini adalah kelas CCNA';
+    })->name('training.ccna');
+
+    // item 2
+    Route::get('mtcna', function(){
+        return 'Ini adalah kelas MTCNA';
+    })->name('training.mtcna');
+
+});
+
+
+
 
