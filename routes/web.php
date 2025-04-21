@@ -3,6 +3,7 @@
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\UmurController;
+use App\Http\Middleware\UmurMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -77,7 +78,8 @@ Route::prefix('umur')->group(function(){
     //Route untuk form umur : 
     Route::get('form-umur', [UmurController::class, 'form_umur'])->name('form');
     Route::post('proses', [UmurController::class, 'proses'])->name('proses');
-    Route::get('berhasil', [UmurController::class, 'berhasil'])->name('berhasil');
+    Route::get('berhasil', [UmurController::class, 'berhasil'])
+    ->middleware(UmurMiddleware::class)->name('berhasil');
 
 });
 
