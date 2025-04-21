@@ -74,7 +74,6 @@ Route::resource('ruangan', RuanganController::class);
 Route::get('report', [RuanganController::class, 'report'])->name('ruangan.report');
 
 Route::prefix('umur')->group(function(){
-
     //Route untuk form umur : 
     Route::get('form-umur', [UmurController::class, 'form_umur'])->name('form');
     Route::post('proses', [UmurController::class, 'proses'])->name('proses');
