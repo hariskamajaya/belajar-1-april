@@ -24,9 +24,6 @@ class UmurController extends Controller
         // menyimpan nilai sementara untuk diolah di middleware dari form yang diinputkan.
         $request->session()->put('umur', $request->umur);
 
-        // return $request;
-
-
 
         // mengarahkan ke halaman berhasil
         return redirect()->route('berhasil')->with('msg', 'Selamat, umur anda memenuhi syarat');
