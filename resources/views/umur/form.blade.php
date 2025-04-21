@@ -10,7 +10,8 @@
     <h1>Halaman Form Umur</h1>
     <p>Masukan data kamu dibawah ini : </p>
 
-    <form action="#" method="post">
+    <form action="{{route('proses')}}" method="post">
+        @csrf
         <div class="">
             <label for="">Nama Lengkap</label>
             <input type="text" name="nama" required placeholder="masukan nama kamu">
@@ -23,7 +24,5 @@
             <button type="submit">Masuk</button>
         </div>
     </form>
-
-
 </body>
 </html>
