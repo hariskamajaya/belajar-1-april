@@ -21,6 +21,13 @@ class UmurController extends Controller
             'umur' => 'required|integer|min:1|max:100',
         ]);
 
+        // menyimpan nilai sementara untuk diolah di middleware dari form yang diinputkan.
+        $request->session()->put('umur', $request->umur);
+
+        // return $request;
+
+
+
         // mengarahkan ke halaman berhasil
         return redirect()->route('berhasil')->with('msg', 'Selamat, umur anda memenuhi syarat');
         

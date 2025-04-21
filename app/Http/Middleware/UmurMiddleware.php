@@ -15,6 +15,19 @@ class UmurMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+
+        //mengambil nilai yang didefinisikan di umur controller
+        $umur = $request->session()->get('umur');
+
+        // kondisi atau aturan jika umurnya >= 18 tahun
+        if($umur >= 18)
+        {
+            return $next($request); //melanjutkan ke route yang dituju.
+        }
+
+        // handle kalau umur < 18
+        return back()->with('gagal', 'Umur kamu belum memenuhi syarat.');
+
+
     }
 }
