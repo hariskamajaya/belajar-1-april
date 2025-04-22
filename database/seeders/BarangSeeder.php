@@ -14,10 +14,13 @@ class BarangSeeder extends Seeder
     public function run(): void
     {
         // input data ke model barang : 
-        Barang::create([
-            'nama_barang' => 'Kertas A4',
-            'jenis' => 'atk',
-            'ukuran' => 'small'
-        ]);
+        // Barang::create([
+        //     'nama_barang' => 'Pulpen',
+        //     'jenis' => 'atk',
+        //     'ukuran' => 'small'
+        // ]);
+
+        Barang::factory()->count(100)->create();
+
     }
 }
