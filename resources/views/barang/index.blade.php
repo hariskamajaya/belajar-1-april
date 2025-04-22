@@ -19,7 +19,6 @@
             <th>Ukuran</th>
         </thead>
         <tbody>
-
             @foreach ($data as $item)
                 <tr>
                     <td>{{$item->nama_barang}}</td>
@@ -27,11 +26,7 @@
                     <td>{{$item->ukuran}}</td>
                 </tr>
             @endforeach
-
         </tbody>
     </table>
-
-
 </body>
-
 </html>

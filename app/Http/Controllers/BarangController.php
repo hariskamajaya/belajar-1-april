@@ -20,4 +20,10 @@ class BarangController extends Controller
         return 'ini adalah halaman menampilkan form create barang';
     }
 
+    public function detail($id)
+    {
+        $data = Barang::findOrFail($id);
+        return view('barang.detail', compact('data'));
+    }
+
 }

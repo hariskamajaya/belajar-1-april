@@ -68,6 +68,7 @@ Route::prefix('training')->group(function(){
 
 Route::get('barang', [BarangController::class, 'index'])->name('barang.index');
 Route::get('barang/create', [BarangController::class, 'create'])->name('barang.create');
+Route::get('barang/{param}', [BarangController::class, 'detail'])->name('barang.detail');
 
 // route resource
 Route::resource('ruangan', RuanganController::class);
