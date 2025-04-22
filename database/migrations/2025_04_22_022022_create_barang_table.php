@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nama_barang'); //column nama barang -> varchar
             $table->enum('jenis',['elektronik', 'cair', 'atk']); //column jenis -> 
             $table->enum('ukuran', ['small', 'large', 'extra large']);
+
+
             $table->timestamps();
         });
     }
